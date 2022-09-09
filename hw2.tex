@@ -49,6 +49,21 @@
         brief description of the problem statement/motivation for the work. What results were
         presented (e.g. plots of positioning accuracy, raw sensor data, etc.)? Did the authors
         successfully convey the methodology?}
+
+    \solution{%
+        In "Corridors-based naviation for automated vehicles convoy in off-road enviroments", the authors (Godoy J., et al.) present a motion-planning architecture based on the wake generation of the leading vehicle to optimally estimate a navigable trajectory. Godoy employs this methodology becuase markings found on highways and roads are either hard to detect using optical sensors, or just do not exist at all when travelling off-road. A handful of sensors colloborate to estimate the trajectory. These include:
+        \begin{itemize}
+            \item Radar
+            \item Camera
+            \item LiDAR
+            \item IMU
+            \item GNSS receivers
+        \end{itemize}
+        A localization algorithm uses the sensors above to feed into a perception algorithm. The outputs are then communicated to each following vehicle to where the guidance module takes over to feed the determined trajectory. They estimate the vehicles' position in the global frame, as well as the velocity and orientation of each vehicle with respect to the body frame. They also track the distance between each vehicle and try to maintain less than 50 meters between each vehicle, although some experiments showed the convoy separate by at least 60 meters. The authors display several plots over the course of the paper including plots on waypoint generation, average convoy speed, post-processed trajectories, and error over time with regard to leader-follower difference in speed, north position, and east position.
+
+        I think the authors accurately conveyed their approach. They provide a theoretical algorithm and overview of their off-road grid planning trajectory system and then provide data from field tests with references to the steps inline with the algorithm block diagram.
+
+    }
     \clearpage
     \question{In class, we developed the basic (elementary) rotation matrix
         \begin{equation*}
@@ -179,4 +194,4 @@
     }
 
 \end{questions}
-\end{document}
+\end{document}x
