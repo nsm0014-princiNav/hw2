@@ -32,7 +32,7 @@
     \question{Pedestrian Navigation System: Use your phone to implement a pedestrian navigation
         system. Estimate your position by starting at a known location and dead reckoning using
         an open-source step counter and compass. Make sure that your route is at least 1 km and
-        contains turns in both directions. Use the compass to tracking your orientation. You can
+        contains turns in both directions. Use the compass to track your orientation. You can
         record measurements (i.e. step and compass reading) on your phone if you have that
         functionality. Otherwise use pad and paper to track steps and compass changes.
 
@@ -77,6 +77,34 @@
         that describe the orientation of a coordinate frame rotated away from another coordinate frame by an angle $\theta$ about the $y$-axis.}
     \begin{parts}
         \part{Derive the basic (elementary) rotation matrix $C_{y,\theta}$ that describes the orientation of a coordinate frame rotated away from another coordinate frame by an angle $\theta$ about the $y$-axis.}
+
+        \solution{%
+            \begin{figure}[!h]
+                \centering
+                \includegraphics[width=0.5\linewidth]{Q3a.png}
+                \caption{Standard 3-dimensional axis with an applied rotation, $\theta$, about the $y$-axis.}
+                \label{fig:1}
+            \end{figure}
+
+            Using figure \ref{fig:1}, a $3 \times 3$ matrix comprised of dot products from each combination of unit vectors between the two frames and the rotation, $\theta$ will give us $C_{y,\theta}$.
+            \begin{equation}
+                \begin{split}
+                    C_{y,\theta} & =
+                    \begin{bmatrix}
+                        x'x_1 & y'x_1 & z'x_1 \\
+                        x'y_1 & y'y_1 & z'y_1 \\
+                        x'z_1 & y'z_1 & z'z_1 \\
+                    \end{bmatrix}\\
+                    C_{y,\theta} & =
+                    \begin{bmatrix}
+                        cos(\theta) & 0 & -sin(\theta) \\
+                        0           & 1 & 0            \\
+                        sin(\theta) & 0 & cos(\theta)  \\
+                    \end{bmatrix}\\
+                \end{split}
+                \label{eq:1}
+            \end{equation}
+        }
     \end{parts}
     \clearpage
     \question{For each of the matrices below, determine which are valid rotation matrices.  Justify
