@@ -113,7 +113,7 @@
     \solution{%
         We can validate each rotation matrix by verifying that each matrix respects the orthonormality of rotation matrices.
 
-        Orthonormality states that a matrix has indices orthongonal and normal to each other.
+        Orthonormality states that a matrix has indices orthogonal and normal to each other. We can check for orthonormality by using MATLAB command $>>det$ and the multiplication of the matrix with its transpose.
     }
     \begin{parts}
         \part{
@@ -127,7 +127,18 @@
             \end{equation*}
 
             \solution{%
-
+                \begin{equation}
+                    \begin{split}
+                        >>\mathbf{det}(c^a_b) = 1 \quad&\quad c^a_b \,(c^a_b)^{\mathbf{T}} =
+                        \begin{bmatrix}
+                            1 & 0 & 0 \\
+                            0 & 1 & 0 \\
+                            0 & 0 & 1 \\
+                        \end{bmatrix} \\
+                    \end{split}
+                    \label{eq:2}
+                \end{equation}
+                Because the determinant of this matrix is 1 and the product of the matrix with it's transpose is the identity matrix, we can conclude that this is an actual rotation matrix.
             }
         }
         \part{
@@ -141,12 +152,23 @@
             \end{equation*}
 
             \solution{%
-
+                \begin{equation}
+                    \begin{split}
+                        >>\mathbf{det}(c^b_c) = 0 \quad&\quad c^b_c \,(c^b_c)^{\mathbf{T}} =
+                        \begin{bmatrix}
+                            2 & 0 & 0 \\
+                            0 & 1 & 0 \\
+                            0 & 0 & 0 \\
+                        \end{bmatrix} \\
+                    \end{split}
+                    \label{eq:3}
+                \end{equation}
+                This matrix is not a true rotation matrix as it is not orthogonal in it's components and also it's product with the matrix's transpose does not equal an identity matrix.
             }
         }
         \part{
             \begin{equation*}
-                c^b_c =
+                c^c_d =
                 \begin{bmatrix}
                     1 & 0           & 0 \\
                     0 & \frac{1}{2} & 0 \\
@@ -155,7 +177,18 @@
             \end{equation*}
 
             \solution{%
-
+                \begin{equation}
+                    \begin{split}
+                        >>\mathbf{det}(c^c_d) = 1 \quad&\quad c^c_d \,(c^c_d)^{\mathbf{T}} =
+                        \begin{bmatrix}
+                            1 & 0    & 0 \\
+                            0 & 0.25 & 0 \\
+                            0 & 0    & 4 \\
+                        \end{bmatrix} \\
+                    \end{split}
+                    \label{eq:4}
+                \end{equation}
+                While this matrix does prove to be orthogonal between its indices, the transpose product does not lead to an identity matrix, concluding that this is not a true rotation matrix.
             }
         }
         \part{
@@ -169,7 +202,19 @@
             \end{equation*}
 
             \solution{%
-
+                \begin{equation}
+                    \begin{split}
+                        >>\mathbf{det}(c^d_e) & = 0.99992\\
+                        c^d_e \,(c^d_e)^{\mathbf{T}} & =
+                        \begin{bmatrix}
+                            0.99995             & -5.72\times 10^{-6} & 1.402\times 10^{-6} \\
+                            -5.72\times 10^{-6} & 0.99993             & -7.93\times 10^{-5} \\
+                            1.402\times 10^{-6} & -7.93\times 10^{-5} & 0.99995             \\
+                        \end{bmatrix} \\
+                    \end{split}
+                    \label{eq:6}
+                \end{equation}
+                This rotation is tricky as MATLAB computes almost near perfect values to satisfy the orthonormal properties of a rotation matrix. However, solving this problem by hand gives us both orthogonality and an identity matrix, so we can conclude that this is a proper rotation matrix.
             }
             \part{
                 \begin{equation*}
@@ -182,7 +227,18 @@
                 \end{equation*}
 
                 \solution{%
-
+                    \begin{equation}
+                        \begin{split}
+                            >>\mathbf{det}(c^e_f) = -0.45717 \quad&\quad c^e_f \,(c^e_f)^{\mathbf{T}} =
+                            \begin{bmatrix}
+                                1.0001  & 0.25     & 0.00005    \\
+                                0.25    & 1.0001   & 0\-0.85355 \\
+                                0.00005 & -0.85355 & 0.99995    \\
+                            \end{bmatrix} \\
+                        \end{split}
+                        \label{eq:5}
+                    \end{equation}
+                    Here we see that this matrix is not a real rotation matrix as there is no orthogonality and no identity matrix produced from multiplying the matrix with it's transpose.
                 }
             }
         }
