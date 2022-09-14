@@ -43,6 +43,57 @@
         (\url{https://www.gpsvisualizer.com/}) or a Matlab toolbox if available. Measure the error in
         your final position and orientation. Report total error and error relative to distance
         traveled.}
+
+    \solution{%
+        I planned to walk around my apartment complex (Figure \ref{fig:gmap}), totaling $1.5$ kilometers - according to Google Earth. I recorded 22 separate measurements (Table \ref{tbl:1}), noting heading according to the \textit{Compass} app on my iPhone and the number of steps according to the pedometer feature on my Apple Watch SE. Before starting my route, I already walked 4,296 steps that day. Figure \ref{fig:gmap_steps} shows the plotting of my measurements, assuming a constant 1 meter step length. When plotting the trajectory, I assumed the $1\,[cm]:20\,[m]$ scale of the map image to be correct, and drew on top of the image using a ruler/protractor on my iPad mini with my Apple Pencil. My estimated final position compared with my actual final position were off by about 70 meters. The estimated trajectory from Figure \ref{fig:gmap_steps} resembles a similiar shape to my actual path, but shows variations in direction and path lengths as differents points during the route. An assumed constant step length could be a factor in the final error, along with the difficulty of the path. A better route for this problem statement would have distinct left and right turns, instead, this planned route (Figure \ref{fig:gmap}) has curving turns, making it hard to decide when to measure.
+
+
+        \begin{figure}[!h]
+            \centering
+            \includegraphics[width=0.5\linewidth]{IMG_0037.PNG}
+            \caption{Planned route around apartment complex, using Google Earth to measure.}
+            \label{fig:gmap}
+        \end{figure}
+
+        \begin{table}[!h]
+            \caption{Recorded measurements while walking planned route (Figure \ref{fig:gmap})}
+            \label{tbl:1}
+            \centering
+            \begin{tabular}{|c|c|c|c|c|}
+                \hline
+                \# & Step Number & Step Difference & Heading [deg] & Heading Difference [deg] \\ \hline
+                1  & 4296        & 0               & 176           & 0                        \\
+                2  & 4378        & 82              & 159           & -17                      \\
+                3  & 4405        & 27              & 238           & 79                       \\
+                4  & 4418        & 13              & 240           & 2                        \\
+                5  & 4539        & 121             & 266           & 26                       \\
+                6  & 4581        & 42              & 321           & 55                       \\
+                7  & 4708        & 127             & 356           & 35                       \\
+                8  & 4877        & 169             & 5             & -351                     \\
+                9  & 4956        & 79              & 65            & 60                       \\
+                10 & 5120        & 164             & 178           & 113                      \\
+                11 & 5173        & 53              & 273           & 95                       \\
+                12 & 5250        & 77              & 161           & -112                     \\
+                13 & 5403        & 153             & 120           & -41                      \\
+                14 & 5533        & 130             & 177           & 57                       \\
+                15 & 5541        & 8               & 260           & 83                       \\
+                16 & 5581        & 40              & 210           & -50                      \\
+                17 & 5635        & 54              & 171           & -39                      \\
+                18 & 5730        & 95              & 120           & -51                      \\
+                19 & 5779        & 49              & 68            & -52                      \\
+                20 & 5821        & 42              & 340           & 272                      \\
+                21 & 5851        & 30              & 57            & -283                     \\
+                22 & 5985        & 134             & 45            & -12                      \\ \hline
+            \end{tabular}
+        \end{table}
+
+        \begin{figure}[!h]
+            \centering
+            \includegraphics[width=0.5\linewidth]{IMG_0039.JPEG}
+            \caption{Estimated path using step and compass measurements (Table \ref{tbl:1})}
+            \label{fig:gmap_steps}
+        \end{figure}
+    }
     \clearpage
     \question{Find a scholarly article describing a navigation system for a team of at least two ground
         vehicles. Describe the sensors used, states estimated, and estimator architecture. Give a
