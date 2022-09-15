@@ -348,17 +348,62 @@
     \clearpage
     \question{For each pair of coordinate frames, find the rotation matrix $C^a_b$ that describes their relative orientation.
         \begin{parts}
-            \part{
-                \begin{figure*}[!h]
-                    \centering
-                    \includegraphics[width=0.25\linewidth]{Q6a.png}
-                \end{figure*}
+            \part{%
+                \solution{%
+                    We can find the required rotation matrix $C^a_b$ by first rotating about the $Z$-axis by 90 degrees and then rotating by the intermediate $X$-axis by 180 degrees.
+                    \begin{figure*}[!h]
+                        \centering
+                        \includegraphics[width=0.25\linewidth]{Q6a.png}
+                    \end{figure*}
+
+                    This gives us a rotation sequence of
+                    \begin{equation}
+                        C^a_b = R_{z,90}\,R_{x,180}
+                    \end{equation}
+
+                    Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:9}).
+                    \begin{equation}
+                        \begin{split}
+                            C^a_b & =
+                            \begin{bmatrix}
+                                0 & 1 & 0  \\
+                                1 & 0 & 0  \\
+                                0 & 0 & -1 \\
+                            \end{bmatrix}
+                        \end{split}
+                        \label{eq:9}
+                    \end{equation}
+                }
             }
+            \clearpage
             \part{
-                \begin{figure*}[!h]
-                    \centering
-                    \includegraphics[width=0.25\linewidth]{Q6b.png}
-                \end{figure*}
+                \solution{%
+                    We can find the required rotation matrix $C^a_b$ by first rotating about the $Y$-axis by 45 degrees and then rotating by the intermediate $X$-axis by 90 degrees.
+                    \begin{figure*}[!h]
+                        \centering
+                        \includegraphics[width=0.25\linewidth]{Q6b.png}
+                    \end{figure*}
+
+                    This gives us a rotation sequence of
+                    \begin{equation}
+                        C^a_b = R_{Y,45}\,R_{X,90}
+                    \end{equation}
+
+                    Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:10}).
+                    \begin{equation}
+                        \begin{split}
+                            C^a_b & =
+                            \begin{bmatrix}
+                                \frac{\sqrt{2}}{2} & 0  & -\frac{\sqrt{2}}{2} \\
+                                                   &    &                     \\
+                                \frac{\sqrt{2}}{2} & 0  & \frac{\sqrt{2}}{2}  \\
+                                                   &    &                     \\
+                                0                  & -1 & 0                   \\
+                            \end{bmatrix}
+                        \end{split}
+                        \label{eq:10}
+                    \end{equation}
+                }
             }
         \end{parts}}
     \clearpage
