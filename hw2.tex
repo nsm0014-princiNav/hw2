@@ -322,7 +322,7 @@
 
             \begin{equation}
                 \begin{split}
-                    \mathbf{v}^1 & = \mathbf{C}^0_1 \mathbf{v}^0\\
+                    \mathbf{v}^1 & = \mathbf{C}^1_0 \mathbf{v}^0\\
                     \mathbf{v}^1 & =
                     \begin{bmatrix}
                         0  & -\frac{\sqrt{3}}{2} & -\frac{1}{2}       \\
@@ -358,7 +358,7 @@
 
                 This gives us a rotation sequence of
                 \begin{equation}
-                    C^a_b = R_{z,90}\,R_{x,180}
+                    C^a_b = \left(R_{z,90}\,R_{x,180}\right)^{\mathbf{T}}
                 \end{equation}
 
                 Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:9}).
@@ -369,7 +369,7 @@
                             0 & 1 & 0  \\
                             1 & 0 & 0  \\
                             0 & 0 & -1 \\
-                        \end{bmatrix}
+                        \end{bmatrix}^{\mathbf{T}}
                     \end{split}
                     \label{eq:9}
                 \end{equation}
@@ -386,7 +386,7 @@
 
                 This gives us a rotation sequence of
                 \begin{equation}
-                    C^a_b = R_{Y,45}\,R_{X,90}
+                    C^a_b = \left(R_{Y,45}\,R_{X,90}\right)^{\mathbf{T}}
                 \end{equation}
 
                 Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:10}).
@@ -399,7 +399,7 @@
                             0                   & 0                  & -1 \\
                                                 &                    &    \\
                             -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0  \\
-                        \end{bmatrix}
+                        \end{bmatrix}^{\mathbf{T}}
                     \end{split}
                     \label{eq:10}
                 \end{equation}
@@ -413,18 +413,18 @@
             \item[ii.]{$90^o$ about the current $y$-axis}
             \item[iii.]{$-90^o$ about the fixed $x$-axis}
         \end{itemize}
-        Find the resulting rotation matrix $C^0_1$ and sketch frames $\{0\}$ and $\{1\}$ relative to each other.
+        Find the resulting rotation matrix $C^1_0$ and sketch frames $\{0\}$ and $\{1\}$ relative to each other.
     }
 
     \solution{%
-        From class, we know that relative rotations append to the current rotation and that fixed rotations prepend the current rotation, we can formulate the rotation $C^0_1$ to be
+        From class, we know that relative rotations append to the current rotation and that fixed rotations prepend the current rotation, we can formulate the rotation $C^1_0$ to be
         \begin{equation*}
-            C^0_1 = R_{x,-90}R_{z,-90}R_{y,90}.
+            C^1_0 = R_{x,-90}R_{z,-90}R_{y,90}.
         \end{equation*}
-        Then, using the same custom MATLAB function as used in question \ref{question@6}\ref{part@6@1}, we can calculate $C^0_1$.
+        Then, using the same custom MATLAB function as used in question \ref{question@6}\ref{part@6@1}, we can calculate $C^1_0$.
         \begin{equation}
             \begin{split}
-                C^0_1 & =
+                C^1_0 & =
                 \begin{bmatrix}
                     0  & 1 & 0 \\
                     -1 & 0 & 0 \\
