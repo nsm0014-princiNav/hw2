@@ -148,9 +148,9 @@
                     \end{bmatrix}\\
                     C_{y,\theta} & =
                     \begin{bmatrix}
-                        cos(\theta) & 0 & -sin(\theta) \\
-                        0           & 1 & 0            \\
-                        sin(\theta) & 0 & cos(\theta)  \\
+                        cos(\theta)  & 0 & sin(\theta) \\
+                        0            & 1 & 0           \\
+                        -sin(\theta) & 0 & cos(\theta) \\
                     \end{bmatrix}\\
                 \end{split}
                 \label{eq:1}
@@ -394,11 +394,11 @@
                     \begin{split}
                         C^a_b & =
                         \begin{bmatrix}
-                            \frac{\sqrt{2}}{2} & 0  & -\frac{\sqrt{2}}{2} \\
-                                               &    &                     \\
-                            \frac{\sqrt{2}}{2} & 0  & \frac{\sqrt{2}}{2}  \\
-                                               &    &                     \\
-                            0                  & -1 & 0                   \\
+                            \frac{\sqrt{2}}{2}  & \frac{\sqrt{2}}{2} & 0  \\
+                                                &                    &    \\
+                            0                   & 0                  & -1 \\
+                                                &                    &    \\
+                            -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0  \\
                         \end{bmatrix}
                     \end{split}
                     \label{eq:10}
@@ -411,7 +411,7 @@
         \begin{itemize}
             \item[i.]{$-90^o$ about the fixed $z$-axis}
             \item[ii.]{$90^o$ about the current $y$-axis}
-            \item[iii.]{$-90^o$ about the current $x$-axis}
+            \item[iii.]{$-90^o$ about the fixed $x$-axis}
         \end{itemize}
         Find the resulting rotation matrix $C^0_1$ and sketch frames $\{0\}$ and $\{1\}$ relative to each other.
     }
@@ -419,16 +419,16 @@
     \solution{%
         From class, we know that relative rotations append to the current rotation and that fixed rotations prepend the current rotation, we can formulate the rotation $C^0_1$ to be
         \begin{equation*}
-            C^0_1 = R_{z,-90}R_{y,90}R_{x,-90}.
+            C^0_1 = R_{x,-90}R_{z,-90}R_{y,90}.
         \end{equation*}
         Then, using the same custom MATLAB function as used in question \ref{question@6}\ref{part@6@1}, we can calculate $C^0_1$.
         \begin{equation}
             \begin{split}
                 C^0_1 & =
                 \begin{bmatrix}
-                    0 & 0 & -1 \\
-                    0 & 1 & 0  \\
-                    1 & 0 & 0  \\
+                    0  & 1 & 0 \\
+                    -1 & 0 & 0 \\
+                    0  & 0 & 1 \\
                 \end{bmatrix}\\
             \end{split}
             \label{eq:12}
@@ -442,9 +442,32 @@
     }
     \clearpage
     \question{Given the roll-pitch-yaw angles ($\phi$, $\theta$, $\psi$) = ($120^o$, $45^o$, $-120^o$), find the rotation matrix that describes the same orientation. Assume the $ZYX$ series of rotations. Verify that you have constructed the correct rotation matrix by backing out the angles.}
-    
+
     \solution{%
-    
+    For a fixed rotation set of roll-pitch-yaw angles, we can find the rotation matrix by doing a fixed rotation sequence in 3 steps. This reflects that $C_0^1 = R_{\phi,120}\,R_{theta,45}\,R_{\psi,-120}$. Multiplying these matrices together gives us
+    \begin{equation*}
+        C_0^1 =
+        \begin{bmatrix}
+            -0.35355 & 0.61237  & 0.70711  \\
+            0.12683  & 0.78033  & -0.61237 \\
+            -0.92678 & -0.12683 & -0.35355 \\
+        \end{bmatrix}
+    \end{equation*}
+
+    To verify that this is correct we can back-solve for the Euler angles using the following equations (Equation \ref{eq:13}).
+    \begin{equation}
+        \begin{split}
+            \phi & = tan^{-1}\left(\frac{-C_{23}}{C_{33}}\right) \\
+            \theta & = tan^{-1}\left(\frac{-C_{13}}{\sqrt{C_{23}^2 + C_{33}^2}}\right) \\
+            \psi & = tan^{-1}\left(\frac{-C_{12}}{C_{11}}\right)\\
+        \end{split}
+        \label{eq:13}
+    \end{equation}
+    From equation \ref{eq:13}, we get
+    \[\phi = -60^o \]
+    \[\theta = 45^o \]
+    \[\psi = 60^o \]
+    and upon comparing our given rotation angles to these calculated ones, we are convinced that these angles are the same by understanding that angles can be noted in a positive rotation from $0^o$ to $180^o$.
     }
     \clearpage
     \question{(Required for 6790 only) Consider the threee coordinate frames $\{\alpha\}$, $\{\beta\}$, and $\{\gamma\}$ shown in the diagram below. Following the notation introduced in the class, find the following Cartesian position vectors (denoted by $\vec{r}$\;) and rotation matrices (denoted by $C$).
@@ -465,4 +488,4 @@
     }
 
 \end{questions}
-\end{document}x
+\end{document}
