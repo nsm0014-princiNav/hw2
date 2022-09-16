@@ -303,109 +303,109 @@
                 0  & -\frac{1}{2}        & \frac{\sqrt{3}}{2} \\
                 -1 & 0                   & 0                  \\
             \end{bmatrix}
-        \end{equation*}
-        \begin{parts}
-            \part{Sketch frames $0$ and $1$ with their origins co-located.}
+        \end{equation*}}
+    \begin{parts}
+        \part{Sketch frames $0$ and $1$ with their origins co-located.}
 
-            \solution{%
-                \begin{figure}[!h]
+        \solution{%
+            \begin{figure}[!h]
+                \centering
+                \includegraphics[width=0.5\linewidth]{Q5a.png}
+                \caption{Sketch of both frames sharing a common origin.}
+                \label{fig:2}
+            \end{figure}
+        }
+        \part{Given a vector $\mathbf{v}^0 = \left[\;1 \quad 1 \quad 1\;\right]^T$ coordinated in frame $0$, re-coordinatize the vector such that it is described in frame 1.}
+
+        \solution{%
+            In order for us to transform $\mathbf{v}^0$ to frame 1, we can use the transformation matrix provided to us and multiply it by the original vector in frame 0.
+
+            \begin{equation}
+                \begin{split}
+                    \mathbf{v}^1 & = \mathbf{C}^0_1 \mathbf{v}^0\\
+                    \mathbf{v}^1 & =
+                    \begin{bmatrix}
+                        0  & -\frac{\sqrt{3}}{2} & -\frac{1}{2}       \\
+                        0  & -\frac{1}{2}        & \frac{\sqrt{3}}{2} \\
+                        -1 & 0                   & 0                  \\
+                    \end{bmatrix}
+                    \begin{bmatrix}
+                        1 \\
+                        1 \\
+                        1 \\
+                    \end{bmatrix}\\
+                    \mathbf{v}^1 & =
+                    \begin{bmatrix}
+                        -1.3660 \\
+                        0.3660  \\
+                        -1.000  \\
+                    \end{bmatrix}\\
+                \end{split}
+                \label{}
+            \end{equation}
+        }
+    \end{parts}
+
+    \question{For each pair of coordinate frames, find the rotation matrix $C^a_b$ that describes their relative orientation.}
+    \begin{parts}
+        \part{
+            \solution{
+                We can find the required rotation matrix $C^a_b$ by first rotating about the $Z$-axis by 90 degrees and then rotating by the intermediate $X$-axis by 180 degrees.
+                \begin{figure*}[!h]
                     \centering
-                    \includegraphics[width=0.5\linewidth]{Q5a.png}
-                    \caption{Sketch of both frames sharing a common origin.}
-                    \label{fig:2}
-                \end{figure}
-            }
-            \part{Given a vector $\mathbf{v}^0 = \left[\;1 \quad 1 \quad 1\;\right]^T$ coordinated in frame $0$, re-coordinatize the vector such that it is described in frame 1.}
+                    \includegraphics[width=0.25\linewidth]{Q6a.png}
+                \end{figure*}
 
-            \solution{%
-                In order for us to transform $\mathbf{v}^0$ to frame 1, we can use the transformation matrix provided to us and multiply it by the original vector in frame 0.
+                This gives us a rotation sequence of
+                \begin{equation}
+                    C^a_b = R_{z,90}\,R_{x,180}
+                \end{equation}
 
+                Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:9}).
                 \begin{equation}
                     \begin{split}
-                        \mathbf{v}^1 & = \mathbf{C}^0_1 \mathbf{v}^0\\
-                        \mathbf{v}^1 & =
+                        C^a_b & =
                         \begin{bmatrix}
-                            0  & -\frac{\sqrt{3}}{2} & -\frac{1}{2}       \\
-                            0  & -\frac{1}{2}        & \frac{\sqrt{3}}{2} \\
-                            -1 & 0                   & 0                  \\
+                            0 & 1 & 0  \\
+                            1 & 0 & 0  \\
+                            0 & 0 & -1 \\
                         \end{bmatrix}
-                        \begin{bmatrix}
-                            1 \\
-                            1 \\
-                            1 \\
-                        \end{bmatrix}\\
-                        \mathbf{v}^1 & =
-                        \begin{bmatrix}
-                            -1.3660 \\
-                            0.3660  \\
-                            -1.000  \\
-                        \end{bmatrix}\\
                     \end{split}
-                    \label{}
+                    \label{eq:9}
                 \end{equation}
             }
-        \end{parts}}
-    \clearpage
-    \question{For each pair of coordinate frames, find the rotation matrix $C^a_b$ that describes their relative orientation.
-        \begin{parts}
-            \part{%
-                \solution{%
-                    We can find the required rotation matrix $C^a_b$ by first rotating about the $Z$-axis by 90 degrees and then rotating by the intermediate $X$-axis by 180 degrees.
-                    \begin{figure*}[!h]
-                        \centering
-                        \includegraphics[width=0.25\linewidth]{Q6a.png}
-                    \end{figure*}
+        }
+        \clearpage
+        \part{
+            \solution{
+                We can find the required rotation matrix $C^a_b$ by first rotating about the $Y$-axis by 45 degrees and then rotating by the intermediate $X$-axis by 90 degrees.
+                \begin{figure*}[!h]
+                    \centering
+                    \includegraphics[width=0.25\linewidth]{Q6b.png}
+                \end{figure*}
 
-                    This gives us a rotation sequence of
-                    \begin{equation}
-                        C^a_b = R_{z,90}\,R_{x,180}
-                    \end{equation}
+                This gives us a rotation sequence of
+                \begin{equation}
+                    C^a_b = R_{Y,45}\,R_{X,90}
+                \end{equation}
 
-                    Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:9}).
-                    \begin{equation}
-                        \begin{split}
-                            C^a_b & =
-                            \begin{bmatrix}
-                                0 & 1 & 0  \\
-                                1 & 0 & 0  \\
-                                0 & 0 & -1 \\
-                            \end{bmatrix}
-                        \end{split}
-                        \label{eq:9}
-                    \end{equation}
-                }
+                Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:10}).
+                \begin{equation}
+                    \begin{split}
+                        C^a_b & =
+                        \begin{bmatrix}
+                            \frac{\sqrt{2}}{2} & 0  & -\frac{\sqrt{2}}{2} \\
+                                               &    &                     \\
+                            \frac{\sqrt{2}}{2} & 0  & \frac{\sqrt{2}}{2}  \\
+                                               &    &                     \\
+                            0                  & -1 & 0                   \\
+                        \end{bmatrix}
+                    \end{split}
+                    \label{eq:10}
+                \end{equation}
             }
-            \clearpage
-            \part{
-                \solution{%
-                    We can find the required rotation matrix $C^a_b$ by first rotating about the $Y$-axis by 45 degrees and then rotating by the intermediate $X$-axis by 90 degrees.
-                    \begin{figure*}[!h]
-                        \centering
-                        \includegraphics[width=0.25\linewidth]{Q6b.png}
-                    \end{figure*}
-
-                    This gives us a rotation sequence of
-                    \begin{equation}
-                        C^a_b = R_{Y,45}\,R_{X,90}
-                    \end{equation}
-
-                    Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:10}).
-                    \begin{equation}
-                        \begin{split}
-                            C^a_b & =
-                            \begin{bmatrix}
-                                \frac{\sqrt{2}}{2} & 0  & -\frac{\sqrt{2}}{2} \\
-                                                   &    &                     \\
-                                \frac{\sqrt{2}}{2} & 0  & \frac{\sqrt{2}}{2}  \\
-                                                   &    &                     \\
-                                0                  & -1 & 0                   \\
-                            \end{bmatrix}
-                        \end{split}
-                        \label{eq:10}
-                    \end{equation}
-                }
-            }
-        \end{parts}}
+        }
+    \end{parts}
     \clearpage
     \question{Coordinate frame $\{1\}$ is obtained from frame $\{0\}$ by the following sequence of rotations:
         \begin{itemize}
@@ -415,8 +415,37 @@
         \end{itemize}
         Find the resulting rotation matrix $C^0_1$ and sketch frames $\{0\}$ and $\{1\}$ relative to each other.
     }
+
+    \solution{%
+        From class, we know that relative rotations append to the current rotation and that fixed rotations prepend the current rotation, we can formulate the rotation $C^0_1$ to be
+        \begin{equation*}
+            C^0_1 = R_{z,-90}R_{y,90}R_{x,-90}.
+        \end{equation*}
+        Then, using the same custom MATLAB function as used in question \ref{question@6}\ref{part@6@1}, we can calculate $C^0_1$.
+        \begin{equation}
+            \begin{split}
+                C^0_1 & =
+                \begin{bmatrix}
+                    0 & 0 & -1 \\
+                    0 & 1 & 0  \\
+                    1 & 0 & 0  \\
+                \end{bmatrix}\\
+            \end{split}
+            \label{eq:12}
+        \end{equation}
+        \begin{figure}[!h]
+            \centering
+            \includegraphics[width=0.75\linewidth]{Q7.png}
+            \caption{Frame 0 rotated into frame 1 using a $R_{3\,2\,1}$ rotation matrix.}
+            \label{fig:5}
+        \end{figure}
+    }
     \clearpage
     \question{Given the roll-pitch-yaw angles ($\phi$, $\theta$, $\psi$) = ($120^o$, $45^o$, $-120^o$), find the rotation matrix that describes the same orientation. Assume the $ZYX$ series of rotations. Verify that you have constructed the correct rotation matrix by backing out the angles.}
+    
+    \solution{%
+    
+    }
     \clearpage
     \question{(Required for 6790 only) Consider the threee coordinate frames $\{\alpha\}$, $\{\beta\}$, and $\{\gamma\}$ shown in the diagram below. Following the notation introduced in the class, find the following Cartesian position vectors (denoted by $\vec{r}$\;) and rotation matrices (denoted by $C$).
         \begin{figure*}[!h]
