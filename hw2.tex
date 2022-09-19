@@ -386,7 +386,7 @@
 
                 This gives us a rotation sequence of
                 \begin{equation}
-                    C^a_b = \left(R_{Y,45}\,R_{X,90}\right)^{\mathbf{T}}
+                    C^a_b = \left(R_{Y,-45}\,R_{X,-90}\right)^{\mathbf{T}}
                 \end{equation}
 
                 Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:10}).
@@ -394,11 +394,11 @@
                     \begin{split}
                         C^a_b & =
                         \begin{bmatrix}
-                            \frac{\sqrt{2}}{2}  & \frac{\sqrt{2}}{2} & 0  \\
-                                                &                    &    \\
-                            0                   & 0                  & -1 \\
-                                                &                    &    \\
-                            -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2} & 0  \\
+                            \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}  & 0  \\
+                                               &                     &    \\
+                            0                  & 0                   & -1 \\
+                                               &                     &    \\
+                            \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} & 0  \\
                         \end{bmatrix}^{\mathbf{T}}
                     \end{split}
                     \label{eq:10}
