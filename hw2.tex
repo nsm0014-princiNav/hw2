@@ -478,12 +478,166 @@
         \clearpage
         \begin{parts}
             \part{$\vec{r}^{\,\gamma}_{\gamma\alpha}$}
+
+            \solution{%
+                We can find $\vec{r}^{\,\gamma}_{\gamma\alpha}$ by writing the vector components from $\gamma$ to $\alpha$ in the $\gamma$ frame.
+                \begin{equation}
+                    \begin{split}
+                        \vec{r}^{\,\gamma}_{\gamma\alpha} & =
+                        \begin{bmatrix}
+                            \gamma_x - \alpha_x \\
+                            \gamma_y - \alpha_y \\
+                            \gamma_z - \alpha_z \\
+                        \end{bmatrix}\\
+                        \vec{r}^{\,\gamma}_{\gamma\alpha} & =
+                        \begin{bmatrix}
+                            0 - 1    \\
+                            0 - 0    \\
+                            0 - (-4) \\
+                        \end{bmatrix}\\
+                        \vec{r}^{\,\gamma}_{\gamma\alpha} & =
+                        \begin{bmatrix}
+                            -1 \\
+                            0  \\
+                            4  \\
+                        \end{bmatrix}\\
+                    \end{split}
+                    \label{}
+                \end{equation}
+            }
             \part{$\vec{r}^{\,\gamma}_{\gamma\beta}$}
+
+            \solution{%
+                We can find $\vec{r}^{\,\gamma}_{\gamma\beta}$ by writing the vector components from $\gamma$ to $\beta$ in the $\gamma$ frame.
+                \begin{equation}
+                    \begin{split}
+                        \vec{r}^{\,\gamma}_{\gamma\beta} & =
+                        \begin{bmatrix}
+                            \gamma_x - \beta_x \\
+                            \gamma_y - \beta_y \\
+                            \gamma_z - \beta_z \\
+                        \end{bmatrix}\\
+                        \vec{r}^{\,\gamma}_{\gamma\beta} & =
+                        \begin{bmatrix}
+                            0 - 1    \\
+                            0 - (-3) \\
+                            0 - 0    \\
+                        \end{bmatrix}\\
+                        \vec{r}^{\,\gamma}_{\gamma\beta} & =
+                        \begin{bmatrix}
+                            -1 \\
+                            3  \\
+                            0  \\
+                        \end{bmatrix}\\
+                    \end{split}
+                    \label{}
+                \end{equation}}
             \part{$\vec{r}^{\,\alpha}_{\gamma\alpha}$}
+
+            \solution{%
+                We can find $\vec{r}^{\,\alpha}_{\gamma\alpha}$ by writing the vector components from $\gamma$ to $\alpha$ in the $\alpha$ frame.
+                \begin{equation}
+                    \begin{split}
+                        \vec{r}^{\,\alpha}_{\gamma\alpha} & =
+                        \begin{bmatrix}
+                            \gamma_x - \alpha_x \\
+                            \gamma_y - \alpha_y \\
+                            \gamma_z - \alpha_z \\
+                        \end{bmatrix}\\
+                        \vec{r}^{\,\alpha}_{\gamma\alpha} & =
+                        \begin{bmatrix}
+                            0 - (-1) \\
+                            0 - 0    \\
+                            0 - 4    \\
+                        \end{bmatrix}\\
+                        \vec{r}^{\,\alpha}_{\gamma\alpha} & =
+                        \begin{bmatrix}
+                            1  \\
+                            0  \\
+                            -4 \\
+                        \end{bmatrix}\\
+                    \end{split}
+                    \label{}
+                \end{equation}}
             \part{$\vec{r}^{\,\beta}_{\gamma\beta}$}
+
+            \solution{%
+                We can find $\vec{r}^{\,\beta}_{\gamma\beta}$ by writing the vector components from $\gamma$ to $\beta$ in the $\beta$ frame.
+                \begin{equation}
+                    \begin{split}
+                        \vec{r}^{\,\beta}_{\gamma\beta} & =
+                        \begin{bmatrix}
+                            \gamma_x - \beta_x \\
+                            \gamma_y - \beta_y \\
+                            \gamma_z - \beta_z \\
+                        \end{bmatrix}\\
+                        \vec{r}^{\,\beta}_{\gamma\beta} & =
+                        \begin{bmatrix}
+                            0 - (-1) \\
+                            0 - 3    \\
+                            0 - 0    \\
+                        \end{bmatrix}\\
+                        \vec{r}^{\,\beta}_{\gamma\beta} & =
+                        \begin{bmatrix}
+                            1  \\
+                            -3 \\
+                            0  \\
+                        \end{bmatrix}\\
+                    \end{split}
+                    \label{}
+                \end{equation}}
             \part{${C}^{\gamma}_{\alpha}$}
+
+            \solution{%
+                Finding the direction cosine matrix from $\alpha$ to $\gamma$ is a simple $R_{Z,180}$ rotation.
+                \begin{equation}
+                    \begin{split}
+                        {C}^{\gamma}_{\alpha} & =
+                        \begin{bmatrix}
+                            -1 & 0  & 0 \\
+                            0  & -1 & 0 \\
+                            0  & 0  & 1 \\
+                        \end{bmatrix}
+                    \end{split}
+                    \label{}
+                \end{equation}
+            }
             \part{${C}^{\gamma}_{\beta}$}
+
+            \solution{%
+            Finding the direction cosine matrix from $\beta$ to $\gamma$ is a simple $R_{X,45}R_{Z,180}$ rotation.
+            \begin{equation}
+                \begin{split}
+                    {C}^{\beta}_{\alpha} & =
+                    \begin{bmatrix}
+                        -1 & 0                   & 0                   \\
+                           &                     &                     \\
+                        0  & -\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\
+                           &                     &                     \\
+                        0  & -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}  \\
+                    \end{bmatrix}
+                \end{split}
+                \label{}
+            \end{equation}
+            }
             \part{${C}^{\alpha}_{\beta}$}
+
+            \solution{%
+                Finding the direction cosine matrix from $\beta$ to $\alpha$ is a simple $R_{X,45}$ rotation.
+                \begin{equation}
+                    \begin{split}
+                        {C}^{\alpha}_{\beta} & =
+                        \begin{bmatrix}
+                            1 & 0                  & 0                   \\
+                              &                    &                     \\
+                            0 & \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\
+                              &                    &                     \\
+                            0 & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}  \\
+                        \end{bmatrix}
+                    \end{split}
+                    \label{}
+                \end{equation}
+            }
         \end{parts}
     }
 
