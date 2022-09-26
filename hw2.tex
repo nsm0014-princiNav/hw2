@@ -445,7 +445,7 @@
     \question{Given the roll-pitch-yaw angles ($\phi$, $\theta$, $\psi$) = ($120^o$, $45^o$, $-120^o$), find the rotation matrix that describes the same orientation. Assume the $ZYX$ series of rotations. Verify that you have constructed the correct rotation matrix by backing out the angles.}
 
     \solution{%
-    For a fixed rotation set of roll-pitch-yaw angles, we can find the rotation matrix by doing a fixed rotation sequence in 3 steps. This reflects that $C_0^1 = R_{\phi,120}\,R_{theta,45}\,R_{\psi,-120}$. Multiplying these matrices together gives us
+    For a fixed rotation set of roll-pitch-yaw angles, we can find the rotation matrix by doing a fixed rotation sequence in 3 steps. This reflects that $C_0^1 = R_{\phi,120}\,R_{\theta,45}\,R_{\psi,-120}$. Multiplying these matrices together gives us
     \begin{equation*}
         C_0^1 =
         \begin{bmatrix}
@@ -459,7 +459,7 @@
     \begin{equation}
         \begin{split}
             \phi & = tan^{-1}\left(\frac{-C_{23}}{C_{33}}\right) \\
-            \theta & = tan^{-1}\left(\frac{-C_{13}}{\sqrt{C_{23}^2 + C_{33}^2}}\right) \\
+            \theta & = tan^{-1}\left(\frac{C_{13}}{\sqrt{C_{23}^2 + C_{33}^2}}\right) \\
             \psi & = tan^{-1}\left(\frac{-C_{12}}{C_{11}}\right)\\
         \end{split}
         \label{eq:13}
