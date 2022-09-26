@@ -387,7 +387,7 @@
 
                 This gives us a rotation sequence of
                 \begin{equation}
-                    C^a_b = \left(R_{Z,45}\,R_{X,90}\right)^{\mathbf{T}}
+                    C^a_b = \left(R_{Z,45}\,R_{X,90}\right)
                 \end{equation}
 
                 Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:10}).
@@ -420,7 +420,7 @@
     \solution{%
         From class, we know that relative rotations append to the current rotation and that fixed rotations prepend the current rotation, we can formulate the rotation $C^1_0$ to be
         \begin{equation*}
-            C^1_0 = \left(R_{x,-90}R_{z,-90}R_{y,90}\right)^{\mathbf{T}}.
+            C^1_0 = \left(R_{x,-90}R_{z,-90}R_{y,90}\right).
         \end{equation*}
         Then, using the same custom MATLAB function as used in question \ref{question@6}\ref{part@6@1}, we can calculate $C^0_1$.
         \begin{equation}
