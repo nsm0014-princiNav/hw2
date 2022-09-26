@@ -7,4 +7,4 @@ format shortg
 
 DCM = genDCM('deg',[90 180], [3 1])
 
-DCM6b = genDCM('deg',[-45 -90], [2 1])
+DCM6b = genDCM('deg',[45 90], [3 1])
