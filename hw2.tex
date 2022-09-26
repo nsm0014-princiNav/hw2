@@ -45,7 +45,7 @@
         traveled.}
 
     \solution{%
-        I planned to walk around my apartment complex (Figure \ref{fig:gmap}), totaling $1.5$ kilometers - according to Google Earth. I recorded 22 separate measurements (Table \ref{tbl:1}), noting heading according to the \textit{Compass} app on my iPhone and the number of steps according to the pedometer feature on my Apple Watch SE. Before starting my route, I already walked 4,296 steps that day. Figure \ref{fig:gmap_steps} shows the plotting of my measurements, assuming a constant 1 meter step length. When plotting the trajectory, I assumed the $1\,[cm]:20\,[m]$ scale of the map image to be correct, and drew on top of the image using a ruler/protractor on my iPad mini with my Apple Pencil. My estimated final position compared with my actual final position were off by about 70 meters. The estimated trajectory from Figure \ref{fig:gmap_steps} resembles a similiar shape to my actual path, but shows variations in direction and path lengths as differents points during the route. An assumed constant step length could be a factor in the final error, along with the difficulty of the path. A better route for this problem statement would have distinct left and right turns, instead, this planned route (Figure \ref{fig:gmap}) has curving turns, making it hard to decide when to measure.
+        I planned to walk around my apartment complex (Figure \ref{fig:gmap}), totaling $1.5$ kilometers - according to Google Earth. I recorded 22 separate measurements (Table \ref{tbl:1}), noting heading according to the \textit{Compass} app on my iPhone and the number of steps according to the pedometer feature on my Apple Watch SE. Before starting my route, I already walked 4,296 steps that day. Figure \ref{fig:gmap_steps} shows the plotting of my measurements, assuming a constant 1 meter step length. When plotting the trajectory, I assumed the $1\,[cm]:20\,[m]$ scale of the map image to be correct, and drew on top of the image using a ruler/protractor on my iPad mini with my Apple Pencil. My estimated final position compared with my actual final position were off by about 70 meters. The estimated trajectory from Figure \ref{fig:gmap_steps} resembles a similiar shape to my actual path, but shows variations in direction and path lengths as differents points during the route. An assumed constant step length could be a factor in the final error, along with the difficulty of the path. A better route for this problem statement would have distinct left and right turns, instead, this planned route (Figure \ref{fig:gmap}) has curving turns, making it hard to decide when to measure. Assuming the constant 1 meter step length approximates a 1.689 kilometer distance traveled compared to our 1.49 kilometer map trajectory.
 
 
         \begin{figure}[!h]
@@ -486,15 +486,15 @@
                     \begin{split}
                         \vec{r}^{\,\gamma}_{\gamma\alpha} & =
                         \begin{bmatrix}
-                            \gamma_x - \alpha_x \\
-                            \gamma_y - \alpha_y \\
-                            \gamma_z - \alpha_z \\
+                            \alpha_x - \gamma_x \\
+                            \alpha_y - \gamma_y \\
+                            \alpha_z - \gamma_z \\
                         \end{bmatrix}\\
                         \vec{r}^{\,\gamma}_{\gamma\alpha} & =
                         \begin{bmatrix}
-                            0 - 1    \\
-                            0 - 0    \\
-                            0 - (-4) \\
+                            -1 - 0 \\
+                            0 - 0  \\
+                            4- 0   \\
                         \end{bmatrix}\\
                         \vec{r}^{\,\gamma}_{\gamma\alpha} & =
                         \begin{bmatrix}
@@ -514,15 +514,15 @@
                     \begin{split}
                         \vec{r}^{\,\gamma}_{\gamma\beta} & =
                         \begin{bmatrix}
-                            \gamma_x - \beta_x \\
-                            \gamma_y - \beta_y \\
-                            \gamma_z - \beta_z \\
+                            \beta_x - \gamma_x \\
+                            \beta_y - \gamma_y \\
+                            \beta_z - \gamma_z \\
                         \end{bmatrix}\\
                         \vec{r}^{\,\gamma}_{\gamma\beta} & =
                         \begin{bmatrix}
-                            0 - 1    \\
-                            0 - (-3) \\
-                            0 - 0    \\
+                            -1 - 0 \\
+                            3 - 0  \\
+                            0 - 0  \\
                         \end{bmatrix}\\
                         \vec{r}^{\,\gamma}_{\gamma\beta} & =
                         \begin{bmatrix}
@@ -541,15 +541,15 @@
                     \begin{split}
                         \vec{r}^{\,\alpha}_{\gamma\alpha} & =
                         \begin{bmatrix}
-                            \gamma_x - \alpha_x \\
-                            \gamma_y - \alpha_y \\
-                            \gamma_z - \alpha_z \\
+                            \alpha_x - \gamma_x \\
+                            \alpha_y - \gamma_y \\
+                            \alpha_z - \gamma_z \\
                         \end{bmatrix}\\
                         \vec{r}^{\,\alpha}_{\gamma\alpha} & =
                         \begin{bmatrix}
-                            0 - (-1) \\
-                            0 - 0    \\
-                            0 - (-4) \\
+                            1 - 0 \\
+                            0 - 0 \\
+                            4 - 0 \\
                         \end{bmatrix}\\
                         \vec{r}^{\,\alpha}_{\gamma\alpha} & =
                         \begin{bmatrix}
@@ -563,26 +563,21 @@
             \part{$\vec{r}^{\,\beta}_{\gamma\beta}$}
 
             \solution{%
-                We can find $\vec{r}^{\,\beta}_{\gamma\beta}$ by writing the vector components from $\gamma$ to $\beta$ in the $\beta$ frame.
+                We can find $\vec{r}^{\,\beta}_{\gamma\beta}$ by taking part \ref{part@9@2} and rotating it using the transpose of part \ref{part@9@5} to get our desired vector in the $\beta$ frame.
                 \begin{equation}
                     \begin{split}
                         \vec{r}^{\,\beta}_{\gamma\beta} & =
-                        \begin{bmatrix}
-                            \gamma_x - \beta_x \\
-                            \gamma_y - \beta_y \\
-                            \gamma_z - \beta_z \\
-                        \end{bmatrix}\\
-                        \vec{r}^{\,\beta}_{\gamma\beta} & =
-                        \begin{bmatrix}
-                            0 - 1   \\
-                            0 - (3) \\
-                            0 - 0   \\
-                        \end{bmatrix}\\
-                        \vec{r}^{\,\beta}_{\gamma\beta} & =
+                        (\mathbf{C}^{\gamma}_{\beta})^{\mathbf{T}}
                         \begin{bmatrix}
                             -1 \\
                             3  \\
                             0  \\
+                        \end{bmatrix}\\
+                        \vec{r}^{\,\beta}_{\gamma\beta} & =
+                        \begin{bmatrix}
+                            1       \\
+                            -2.1213 \\
+                            -2.1213 \\
                         \end{bmatrix}\\
                     \end{split}
                     \label{}
@@ -609,7 +604,7 @@
             Finding the direction cosine matrix from $\beta$ to $\gamma$ is a simple $R_{X,45}R_{Z,180}$ rotation.
             \begin{equation}
                 \begin{split}
-                    {C}^{\beta}_{\alpha} & =
+                    {C}^{\gamma}_{\beta} & =
                     \begin{bmatrix}
                         -1 & 0                   & 0                   \\
                            &                     &                     \\
