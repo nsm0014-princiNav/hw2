@@ -1,5 +1,6 @@
 \documentclass[12pt,letterpaper, onecolumn]{exam}
 \usepackage{amsmath}
+\usepackage{pdfpages}
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{setspace}
@@ -575,9 +576,9 @@
                         \end{bmatrix}\\
                         \vec{r}^{\,\beta}_{\gamma\beta} & =
                         \begin{bmatrix}
-                            1       \\
-                            -2.1213 \\
-                            -2.1213 \\
+                            1    \\
+                            -2.4 \\
+                            -1.8 \\
                         \end{bmatrix}\\
                     \end{split}
                     \label{}
@@ -601,16 +602,30 @@
             \part{${C}^{\gamma}_{\beta}$}
 
             \solution{%
-            Finding the direction cosine matrix from $\beta$ to $\gamma$ is a simple $R_{X,45}R_{Z,180}$ rotation.
+            To find the direction cosine matrix from $\beta$ to $\gamma$, we first need to determine the angle of the triangle's horizontal plane intersecting with the $\beta$ frame. Becuase the sides of the triangle are known, we can determine the angle to be $53.1301$ degrees from the $z_{\beta}$ frame and $36.8699$ degrees from the $y_{\beta}$ frame (Equation \ref{eq:14}, \ref{eq:15}).
+            \begin{equation}
+                \begin{split}
+                    \theta & = tan^{-1}\left(\frac{4}{3}\right)\\
+                    \theta & = 53.1301\\
+                \end{split}
+                \label{eq:14}
+            \end{equation}
+
+            \begin{equation}
+                \begin{split}
+                    \phi & = 90 - \theta\\
+                    \phi & = 36.8699\\
+                \end{split}
+                \label{eq:15}
+            \end{equation}
+            Using our calculated angles, we find the direction cosine matrix to be a simple $R_{X,36.8699}R_{Z,180}$ rotation.
             \begin{equation}
                 \begin{split}
                     {C}^{\gamma}_{\beta} & =
                     \begin{bmatrix}
-                        -1 & 0                   & 0                   \\
-                           &                     &                     \\
-                        0  & -\frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\
-                           &                     &                     \\
-                        0  & -\frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}  \\
+                        -1 & 0    & 0    \\
+                        0  & -0.8 & -0.6 \\
+                        0  & -0.6 & 0.8  \\
                     \end{bmatrix}
                 \end{split}
                 \label{}
@@ -619,16 +634,14 @@
             \part{${C}^{\alpha}_{\beta}$}
 
             \solution{%
-                Finding the direction cosine matrix from $\beta$ to $\alpha$ is a simple $R_{X,45}$ rotation.
+                Finding the direction cosine matrix from $\beta$ to $\alpha$ is a simple $R_{X,36.8699}$ rotation.
                 \begin{equation}
                     \begin{split}
                         {C}^{\alpha}_{\beta} & =
                         \begin{bmatrix}
-                            1 & 0                  & 0                   \\
-                              &                    &                     \\
-                            0 & \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} \\
-                              &                    &                     \\
-                            0 & \frac{\sqrt{2}}{2} & \frac{\sqrt{2}}{2}  \\
+                            -1 & 0   & 0    \\
+                            0  & 0.8 & -0.6 \\
+                            0  & 0.6 & 0.8  \\
                         \end{bmatrix}
                     \end{split}
                     \label{}
@@ -638,4 +651,5 @@
     }
 
 \end{questions}
+\includepdf[pages=-]{genDCM.pdf}
 \end{document}
