@@ -6,9 +6,8 @@ format shortg
 %% Begin Question 7
 
 DCM = genDCM('deg',[-90 -90 90],[1 3 2])
-DCM'
+
 %frame 1 to 0
-ans*[1;0;0]
 fig1 = figure;
 view(80,45)
 hold on
