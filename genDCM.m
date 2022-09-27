@@ -68,4 +68,5 @@ for i = 2:n
     DCM = (DCM*Matrix(:,:,i));
 
 end
+DCM = DCM';
 end
