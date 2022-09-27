@@ -360,7 +360,7 @@
 
                 This gives us a rotation sequence of
                 \begin{equation}
-                    C^a_b = \left(R_{z,90}\,R_{x,180}\right)^{\mathbf{T}}
+                    C^a_b = \left(R_{z,90}\,R_{x,180}\right)
                 \end{equation}
 
                 Using a custom MATLAB function (appended) we can easily find $C^a_b$ (Equation \ref{eq:9}).
@@ -371,7 +371,7 @@
                             0  & -1 & 0  \\
                             -1 & 0  & 0  \\
                             0  & 0  & -1 \\
-                        \end{bmatrix}^{\mathbf{T}}
+                        \end{bmatrix}\\
                     \end{split}
                     \label{eq:9}
                 \end{equation}
@@ -401,7 +401,7 @@
                             0                  & 0                   & 1 \\
                                                &                     &   \\
                             \frac{\sqrt{2}}{2} & -\frac{\sqrt{2}}{2} & 0 \\
-                        \end{bmatrix}^{\mathbf{T}}
+                        \end{bmatrix}\\
                     \end{split}
                     \label{eq:10}
                 \end{equation}
@@ -438,7 +438,7 @@
         \begin{figure}[!h]
             \centering
             \includegraphics[width=0.75\linewidth]{Q7.png}
-            \caption{Frame 0 rotated into frame 1 using a $R_{2\,3\,1}$ rotation matrix.}
+            \caption{Frame 0 rotated into frame 1 using a $R_{1\,3\,2}$ rotation matrix.}
             \label{fig:5}
         \end{figure}
     }
@@ -450,9 +450,9 @@
     \begin{equation*}
         C_0^1 =
         \begin{bmatrix}
-            -0.35355 & 0.61237  & 0.70711  \\
-            0.12683  & 0.78033  & -0.61237 \\
-            -0.92678 & -0.12683 & -0.35355 \\
+            -0.35355 & 0.61237  & -0.70711 \\
+            0.7392   & -0.28033 & -0.61237 \\
+            -0.57322 & -0.7392  & -0.35355 \\
         \end{bmatrix}
     \end{equation*}
 
@@ -460,7 +460,7 @@
     \begin{equation}
         \begin{split}
             \phi & = tan^{-1}\left(\frac{-C_{23}}{C_{33}}\right) \\
-            \theta & = tan^{-1}\left(\frac{C_{13}}{\sqrt{C_{23}^2 + C_{33}^2}}\right) \\
+            \theta & = sin^{-1}(-C_{13})\\
             \psi & = tan^{-1}\left(\frac{-C_{12}}{C_{11}}\right)\\
         \end{split}
         \label{eq:13}
@@ -640,8 +640,8 @@
                         {C}^{\alpha}_{\beta} & =
                         \begin{bmatrix}
                             -1 & 0   & 0    \\
-                            0  & 0.8 & -0.6 \\
-                            0  & 0.6 & 0.8  \\
+                            0  & 0.8 & 0.6 \\
+                            0  & -0.6 & 0.8  \\
                         \end{bmatrix}
                     \end{split}
                     \label{}
